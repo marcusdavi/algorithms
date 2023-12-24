@@ -28,10 +28,11 @@ public class CodilityServiceImplTest {
 
 	@Test
 	public void testGetLongestBinaryGap() {
-		assertEquals(0,service.getLongestBinaryGap(15));
-		assertEquals(5,service.getLongestBinaryGap(1041));
-		assertEquals(0,service.getLongestBinaryGap(32));
-
+		assertEquals(0,service.getLongestBinaryGap(15));	// 1111
+		assertEquals(5,service.getLongestBinaryGap(1041));	// 10000010001 
+		assertEquals(0,service.getLongestBinaryGap(32));	// 100000	
+		assertEquals(1,service.getLongestBinaryGap(55)); 	// 110111
+		assertEquals(2,service.getLongestBinaryGap(57));	// 111001
 	}
 
 }

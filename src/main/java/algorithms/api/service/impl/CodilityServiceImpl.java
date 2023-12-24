@@ -53,7 +53,7 @@ public class CodilityServiceImpl implements CodilityService {
 			return 0;
 		}
 
-		int binaryGap = 0;
+		int actualBinaryGap = 0;
 		int maxLongestBinaryGap = 0;
 		boolean init = false;
 		char[] bynaryNumber = binaryNumberStr.toCharArray();
@@ -65,12 +65,12 @@ public class CodilityServiceImpl implements CodilityService {
 
 			} else if (bynaryNumber[i] == '1' && init) {
 				init = true;
-				maxLongestBinaryGap = binaryGap > maxLongestBinaryGap ? binaryGap : maxLongestBinaryGap;
-				binaryGap = 0;
+				maxLongestBinaryGap = actualBinaryGap > maxLongestBinaryGap ? actualBinaryGap : maxLongestBinaryGap;
+				actualBinaryGap = 0;
 			}
 
 			else if (bynaryNumber[i] == '0' && init) {
-				binaryGap++;
+				actualBinaryGap++;
 			}
 
 		}
