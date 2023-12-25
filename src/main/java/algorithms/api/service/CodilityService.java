@@ -6,4 +6,5 @@ public interface CodilityService {
 
 	int getLongestBinaryGap(int number);
 
+	int getSmallestIntegerChallenge(int[] numbers);
 }

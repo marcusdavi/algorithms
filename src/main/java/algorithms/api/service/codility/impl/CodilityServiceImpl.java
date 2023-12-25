@@ -1,4 +1,4 @@
-package algorithms.api.service.impl;
+package algorithms.api.service.codility.impl;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -76,6 +76,17 @@ public class CodilityServiceImpl implements CodilityService {
 		}
 
 		return maxLongestBinaryGap;
+	}
+
+	@Override
+	public int getSmallestIntegerChallenge(int[] numbers) {
+		int ans = numbers[0];
+		for (int i = 1; i < numbers.length; i++) {
+			if (ans > numbers[i]) {
+				ans = numbers[i];
+			}
+		}
+		return ans;
 	}
 
 }
