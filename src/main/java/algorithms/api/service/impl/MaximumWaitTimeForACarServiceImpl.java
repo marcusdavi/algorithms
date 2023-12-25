@@ -43,18 +43,14 @@ public class MaximumWaitTimeForACarServiceImpl implements MaximumWaitTimeForACar
 				if (carsQueue.isEmpty()) {
 					for (Dispenser dispenser : dispensers) {
 						if (dispenser.car != null) {
-							fueledCars.add(dispenser.car);
-							dispenser.setCapacity(dispenser.car.fuelDemand);
-							dispenser.setCar(null);
+							fillUpCar(fueledCars, dispenser);
 						}
 					}
 				} else {
 					int waitTimeMin = getWaitTimeMin(dispensers, carsQueue.peek());
 					for (Dispenser dispenser : dispensers) {
 						if (dispenser.car != null && dispenser.car.getFuelDemand() == waitTimeMin) {
-							fueledCars.add(dispenser.car);
-							dispenser.setCapacity(dispenser.car.fuelDemand);
-							dispenser.setCar(null);
+							fillUpCar(fueledCars, dispenser);
 						}
 					}
 					carsQueue.forEach(c -> c.setWaitTime(waitTimeMin));
@@ -63,6 +59,12 @@ public class MaximumWaitTimeForACarServiceImpl implements MaximumWaitTimeForACar
 
 		}
 		return fueledCars.stream().mapToInt(Car::getWaitTime).max().orElse(-1);
+	}
+
+	private void fillUpCar(List<Car> fueledCars, Dispenser dispenser) {
+		fueledCars.add(dispenser.car);
+		dispenser.setCapacity(dispenser.car.fuelDemand);
+		dispenser.setCar(null);
 	}
 
 	private int getWaitTimeMin(List<Dispenser> dispensers, Car nextCar) {
