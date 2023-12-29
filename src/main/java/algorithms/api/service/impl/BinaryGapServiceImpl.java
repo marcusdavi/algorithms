@@ -1,47 +1,15 @@
-package algorithms.api.service.codility.impl;
-
-import java.util.HashSet;
-import java.util.Set;
+package algorithms.api.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import algorithms.api.service.CodilityService;
+import algorithms.api.service.codility.BinaryGapService;
 
 @Service
-public class CodilityServiceImpl implements CodilityService {
-
-	@Override
-	public int getSmallestIntegerNotFound(int[] params) {
-		int result = 1;
-
-		Set<Integer> numbers = new HashSet<>();
-
-		for (int n : params) {
-			if (n > 0)
-				numbers.add(n);
-		}
-
-		if (!numbers.isEmpty()) {
-			int index = 1;
-			boolean notFounded = false;
-
-			while (!notFounded) {
-				if (numbers.contains(index)) {
-					index++;
-				} else {
-					notFounded = true;
-					result = index;
-				}
-			}
-		}
-
-		return result;
-	}
+public class BinaryGapServiceImpl implements BinaryGapService {
 
 	@Override
 	public int getLongestBinaryGap(int number) {
-
 		String binaryNumberStr = "";
 
 		while (number >= 1) {
@@ -76,17 +44,6 @@ public class CodilityServiceImpl implements CodilityService {
 		}
 
 		return maxLongestBinaryGap;
-	}
-
-	@Override
-	public int getSmallestIntegerChallenge(int[] numbers) {
-		int ans = numbers[0];
-		for (int i = 1; i < numbers.length; i++) {
-			if (ans > numbers[i]) {
-				ans = numbers[i];
-			}
-		}
-		return ans;
 	}
 
 }
