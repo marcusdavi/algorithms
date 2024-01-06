@@ -1,6 +1,6 @@
 package algorithms.api.service.codility;
 
-public interface BinaryGapService {
+public interface LongestBinaryGapService {
 
 	int getLongestBinaryGap(int number);
 

@@ -1,4 +1,4 @@
-package algorithms.api.service.impl;
+package algorithms.api.service.codility.impl;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

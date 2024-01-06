@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import algorithms.api.service.codility.BinaryGapService;
 import algorithms.api.service.codility.CleanedSquaresService;
+import algorithms.api.service.codility.LongestBinaryGapService;
 import algorithms.api.service.codility.MaximumWaitTimeForACarService;
 import algorithms.api.service.codility.SmallestIntegerChallengeService;
 import algorithms.api.service.codility.SmallestIntegerNotFoundService;
@@ -16,7 +16,7 @@ import algorithms.api.service.codility.SmallestIntegerNotFoundService;
 public class CodilityResource {
 
 	@Autowired
-	BinaryGapService binaryGapService;
+	LongestBinaryGapService binaryGapService;
 
 	@Autowired
 	SmallestIntegerChallengeService smallestIntegerChallengeService;

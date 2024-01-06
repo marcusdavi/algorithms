@@ -1,4 +1,4 @@
-package algorithms.api.service.impl;
+package algorithms.api.service.codility.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import algorithms.api.service.codility.impl.CleanedSquaresServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CleanedSquaresServiceImplTest {

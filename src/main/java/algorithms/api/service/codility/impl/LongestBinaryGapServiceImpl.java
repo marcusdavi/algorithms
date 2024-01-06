@@ -1,12 +1,12 @@
-package algorithms.api.service.impl;
+package algorithms.api.service.codility.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import algorithms.api.service.codility.BinaryGapService;
+import algorithms.api.service.codility.LongestBinaryGapService;
 
 @Service
-public class BinaryGapServiceImpl implements BinaryGapService {
+public class LongestBinaryGapServiceImpl implements LongestBinaryGapService {
 
 	@Override
 	public int getLongestBinaryGap(int number) {

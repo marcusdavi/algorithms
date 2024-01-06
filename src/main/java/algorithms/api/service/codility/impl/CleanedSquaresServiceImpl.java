@@ -1,4 +1,4 @@
-package algorithms.api.service.impl;
+package algorithms.api.service.codility.impl;
 
 import org.springframework.stereotype.Service;
 
