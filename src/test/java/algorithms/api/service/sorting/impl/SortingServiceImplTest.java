@@ -2,6 +2,7 @@ package algorithms.api.service.sorting.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import algorithms.api.service.sorting.impl.SortingServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
