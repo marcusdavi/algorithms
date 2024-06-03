@@ -18,4 +18,14 @@ public class LeetCodeResource {
 	public ListNode getSmallestIntegerNotFound(ListNode l1, ListNode l2) {
 		return service.getSum(l1, l2);
 	}
+
+	@GetMapping("/palindrome-number")
+	public Boolean getSmallestIntegerNotFound(int number) {
+		return service.isPalindromeNumber(number);
+	}
+
+	@GetMapping("/tow-sum")
+	public int[] getSmallestIntegerNotFound(int[] numbers, int target) {
+		return service.twoSum(numbers, target);
+	}
 }

@@ -1,8 +1,6 @@
 package algorithms.api.service.leetcode.impl;
 
 import algorithms.api.dto.ListNode;
-import algorithms.api.service.searching.to.SortTO;
-import algorithms.api.service.sorting.impl.SortingServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -50,6 +48,30 @@ public class LeetCodeImplTest {
 		assertEquals(9, result.next.val);
 		assertEquals(9, result.next.next.val);
 
+	}
+
+	@Test
+	public void isPalindromeNumber() {
+		assertEquals(true, service.isPalindromeNumber(121));
+		assertEquals(false, service.isPalindromeNumber(250));
+		assertEquals(true, service.isPalindromeNumber(1213121));
+		assertEquals(false, service.isPalindromeNumber(-123));
+
+	}
+
+	@Test
+	public void addTowNumbers() {
+		int[] result = service.twoSum(new int[]{2, 7, 11, 15}, 9);
+		assertEquals(0, result[0]);
+		assertEquals(1, result[1]);
+
+		result = service.twoSum(new int[]{3, 2, 4}, 6);
+		assertEquals(1, result[0]);
+		assertEquals(2, result[1]);
+
+		result = service.twoSum(new int[]{3, 3}, 6);
+		assertEquals(0, result[0]);
+		assertEquals(1, result[1]);
 	}
 
 	private static ListNode createList(int... values) {
