@@ -60,7 +60,7 @@ public class LeetCodeImplTest {
 	}
 
 	@Test
-	public void addTowNumbers() {
+	public void addTwoNumbers() {
 		int[] result = service.twoSum(new int[]{2, 7, 11, 15}, 9);
 		assertEquals(0, result[0]);
 		assertEquals(1, result[1]);
