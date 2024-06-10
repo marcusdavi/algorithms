@@ -83,6 +83,8 @@ public class LeetCodeImplTest {
 	@Test
 	public void heightChecker() {
 		assertEquals(3, service.heightChecker(new int[]{1,1,4,2,1,3}));
+		assertEquals(5, service.heightChecker(new int[]{5,1,2,3,4}));
+		assertEquals(0, service.heightChecker(new int[]{1,2,3,4,5}));
 	}
 
 	private static ListNode createList(int... values) {
