@@ -74,6 +74,17 @@ public class LeetCodeImplTest {
 		assertEquals(1, result[1]);
 	}
 
+	@Test
+	public void permutationDifference() {
+		assertEquals(2, service.permutationDifference("abc", "bac"));
+		assertEquals(12, service.permutationDifference("abcde", "edbac"));
+	}
+
+	@Test
+	public void heightChecker() {
+		assertEquals(3, service.heightChecker(new int[]{1,1,4,2,1,3}));
+	}
+
 	private static ListNode createList(int... values) {
 		if (values.length == 0) {
 			return null;

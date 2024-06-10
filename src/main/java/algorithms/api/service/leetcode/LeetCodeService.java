@@ -29,4 +29,25 @@ public interface LeetCodeService {
      * @param target
      */
     int[] twoSum(int[] numbers, int target);
+
+    /**
+     * You are given two strings s and t such that every character occurs at most once in s and t is a permutation of s.
+     *
+     * The permutation difference between s and t is defined as the sum of the absolute difference between the index of the occurrence of each character in s and the index of the occurrence of the same character in t.
+     *
+     * Return the permutation difference between s and t.
+     * @param s
+     * @param t
+     */
+    int permutationDifference(String s, String t);
+
+    /**
+     * A school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.
+     *
+     * You are given an integer array heights representing the current order that the students are standing in. Each heights[i] is the height of the ith student in line (0-indexed).
+     *
+     * Return the number of indices where heights[i] != expected[i].
+     * @param heights
+     */
+    int heightChecker(int[] heights);
 }

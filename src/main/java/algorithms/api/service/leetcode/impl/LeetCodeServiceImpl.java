@@ -37,6 +37,41 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return null;
     }
 
+    @Override
+    public int permutationDifference(String s, String t) {
+        char[] arrayS = s.toCharArray();
+        int result = 0;
+
+        for(int i = 0; i < arrayS.length; i++){
+            result += Math.abs(i - t.indexOf(arrayS[i]));
+        }
+
+        return result;
+    }
+
+    @Override
+    public int heightChecker(int[] heights) {
+        int[] expected = heights.clone();
+
+        for(int i=0;i < expected.length-1;i++){
+            for(int j=i+1;j<expected.length;j++){
+                if(expected[i] > expected[j]){
+                    int aux = expected[i];
+                    expected[i] = expected[j];
+                    expected[j] = aux;
+                }
+            }
+        }
+        int result = 0;
+        for(int i=0;i < expected.length;i++){
+            if(heights[i] != expected[i]){
+                result++;
+            }
+        }
+
+        return result;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

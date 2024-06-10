@@ -28,4 +28,14 @@ public class LeetCodeResource {
 	public int[] getSmallestIntegerNotFound(int[] numbers, int target) {
 		return service.twoSum(numbers, target);
 	}
+
+	@GetMapping("/permutation-difference-between-two-strings")
+	public int permutationDifference(String s, String t) {
+		return service.permutationDifference(s, t);
+	}
+
+	@GetMapping("/height-checker")
+	public int heightChecker(int[] heights) {
+		return service.heightChecker(heights);
+	}
 }
