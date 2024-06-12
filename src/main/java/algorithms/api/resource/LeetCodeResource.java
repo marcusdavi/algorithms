@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/leetcode")
+@RequestMapping("/leetcode/problems")
 public class LeetCodeResource {
 
 	@Autowired
@@ -52,5 +52,10 @@ public class LeetCodeResource {
 	@GetMapping("/sort-colors")
 	public int[] sortColors(int[] nums) {
 		return service.sortColors(nums);
+	}
+
+	@GetMapping("/remove-duplicates-from-sorted-array")
+	public int removeDuplicates(int[] nums) {
+		return service.removeDuplicates(nums);
 	}
 }

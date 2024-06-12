@@ -108,6 +108,12 @@ public class LeetCodeImplTest {
 	}
 
 	@Test
+	public void removeDuplicates() {
+		assertEquals(2, service.removeDuplicates(new int[]{1, 1, 2}));
+		assertEquals(5, service.removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4}));
+	}
+
+	@Test
 	public void heightChecker() {
 		assertEquals(3, service.heightChecker(new int[]{1,1,4,2,1,3}));
 		assertEquals(5, service.heightChecker(new int[]{5,1,2,3,4}));

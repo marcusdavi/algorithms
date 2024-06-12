@@ -4,9 +4,7 @@ import algorithms.api.dto.ListNode;
 import algorithms.api.service.leetcode.LeetCodeService;
 
 import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LeetCodeServiceImpl implements LeetCodeService {
     @Override
@@ -124,6 +122,23 @@ public class LeetCodeServiceImpl implements LeetCodeService {
             }
         }
         return nums;
+    }
+
+    @Override
+    public int removeDuplicates(int[] nums) {
+        Set<Integer> result = new HashSet<>();
+
+        for (int i=0; i< nums.length ;i++){
+            if(result.contains(nums[i])){
+                nums[i] = 1000;
+            } else {
+                result.add(nums[i]);
+            }
+        }
+
+        Arrays.sort(nums);
+
+        return result.size();
     }
 
     private BigInteger getNumber(ListNode ln){
