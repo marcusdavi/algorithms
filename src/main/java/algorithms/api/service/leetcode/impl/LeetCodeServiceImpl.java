@@ -4,6 +4,7 @@ import algorithms.api.dto.ListNode;
 import algorithms.api.service.leetcode.LeetCodeService;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,6 +73,59 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return result;
     }
 
+    @Override
+    public int removeElement(int[] nums, int val) {
+        int index=0;
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i] != val){
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return index;
+    }
+
+    @Override
+    public int[] relativeSortArray(int[] arr1, int[] arr2) {
+        int[] result = new int[arr1.length];
+        int index=0;
+
+        for (int k : arr2) {
+            for (int j = 0; j < arr1.length; j++) {
+                if (arr1[j] == k) {
+                    result[index] = (arr1[j]);
+                    index++;
+                    arr1[j] = -1;
+                }
+            }
+        }
+
+        Arrays.sort(arr1);
+
+        for (int j : arr1) {
+            if (j != -1) {
+                result[index] = j;
+                index++;
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public int[] sortColors(int[] nums) {
+        for(int i=0; i < nums.length - 1; i++){
+            for(int j=i+1; j < nums.length; j++){
+                if (nums[j] < nums[i]){
+                    int aux = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = aux;
+                }
+            }
+        }
+        return nums;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 
@@ -103,4 +157,5 @@ public class LeetCodeServiceImpl implements LeetCodeService {
 
         return head;
     }
+
 }

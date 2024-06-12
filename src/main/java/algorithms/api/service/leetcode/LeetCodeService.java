@@ -50,4 +50,38 @@ public interface LeetCodeService {
      * @param heights
      */
     int heightChecker(int[] heights);
+
+    /**
+     * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+     *
+     * Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+     *
+     * Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+     * Return k.
+     * @param nums
+     * @param val
+     * @return k
+     */
+    int removeElement(int[] nums, int val);
+
+    /**
+     * Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all elements in arr2 are also in arr1.
+     *
+     * Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2. Elements that do not appear in arr2 should be placed at the end of arr1 in ascending order.
+     * @param arr1
+     * @param arr2
+     * @return int[]
+     */
+    int[] relativeSortArray(int[] arr1, int[] arr2);
+
+    /**
+     * Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+     *
+     * We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+     *
+     * You must solve this problem without using the library's sort function.
+     * @param nums
+     * @return
+     */
+    int[] sortColors(int[] nums);
 }

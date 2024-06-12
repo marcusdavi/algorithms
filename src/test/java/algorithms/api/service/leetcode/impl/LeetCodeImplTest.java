@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -60,6 +62,31 @@ public class LeetCodeImplTest {
 	}
 
 	@Test
+	public void relativeSortArray() {
+		int[] array1 = new int[]{2,3,1,3,2,4,6,7,9,2,19};
+		int[] array2 = new int[]{2,1,4,3,9,6};
+		int[] result = new int[]{2,2,2,1,4,3,3,9,6,7,19};
+
+		int[] response = service.relativeSortArray(array1, array2);
+
+		for(int i=0; i<response.length; i++){
+			assertEquals(result[i], response[i]);
+		}
+
+		array1 = new int[]{28,6,22,8,44,17};
+		array2 = new int[]{22,28,8,6};
+		result = new int[]{22,28,8,6,17,44};
+
+		response = service.relativeSortArray(array1, array2);
+
+		for(int i=0; i<response.length; i++){
+			assertEquals(result[i], response[i]);
+		}
+
+
+	}
+
+	@Test
 	public void addTwoNumbers() {
 		int[] result = service.twoSum(new int[]{2, 7, 11, 15}, 9);
 		assertEquals(0, result[0]);
@@ -85,6 +112,26 @@ public class LeetCodeImplTest {
 		assertEquals(3, service.heightChecker(new int[]{1,1,4,2,1,3}));
 		assertEquals(5, service.heightChecker(new int[]{5,1,2,3,4}));
 		assertEquals(0, service.heightChecker(new int[]{1,2,3,4,5}));
+	}
+
+	@Test
+	public void removeElement() {
+		assertEquals(2, service.removeElement(new int[]{3,2,2,3}, 3));
+		assertEquals(5, service.removeElement(new int[]{0,1,2,2,3,0,4,2},2));
+	}
+
+	@Test
+	public void sortColors() {
+		int [] result = new int[]{0,1,2};
+		int [] response = service.sortColors(new int[]{2,0,1});
+
+		for(int i=0; i<response.length; i++){
+			assertEquals(result[i], response[i]);
+		}
+
+		result = new int[]{0,0,1,1,2,2};
+		response = service.sortColors(new int[]{2,0,2,1,1,0});
+
 	}
 
 	private static ListNode createList(int... values) {

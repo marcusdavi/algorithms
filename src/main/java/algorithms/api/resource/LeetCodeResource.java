@@ -38,4 +38,19 @@ public class LeetCodeResource {
 	public int heightChecker(int[] heights) {
 		return service.heightChecker(heights);
 	}
+
+	@GetMapping("/remove-element")
+	public int removeElement(int[] nums, int val) {
+		return service.removeElement(nums,val);
+	}
+
+	@GetMapping("/relative-sort-array")
+	public int[] relativeSortArray(int[] array1, int[] array2) {
+		return service.relativeSortArray(array1,array2);
+	}
+
+	@GetMapping("/sort-colors")
+	public int[] sortColors(int[] nums) {
+		return service.sortColors(nums);
+	}
 }
