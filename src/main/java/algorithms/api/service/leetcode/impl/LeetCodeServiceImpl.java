@@ -141,6 +141,18 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return result.size();
     }
 
+    @Override
+    public int maximumNumberOfWordsFoundInSentences(String[] sentences) {
+        int maxNumber = 0;
+
+        for(String sentence : sentences){
+            String[] wordsSentence = sentence.split(" ");
+            maxNumber = Math.max(wordsSentence.length, maxNumber);
+        }
+
+        return maxNumber;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

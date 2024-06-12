@@ -121,6 +121,13 @@ public class LeetCodeImplTest {
 	}
 
 	@Test
+	public void maximumNumberOfWordsFoundInSentences(){
+		assertEquals(6, service.maximumNumberOfWordsFoundInSentences(new String[]{"alice and bob love leetcode","i think so too","this is great thanks very much"}));
+		assertEquals(3, service.maximumNumberOfWordsFoundInSentences(new String[]{"please wait","continue to fight","continue to win"}));
+
+	}
+
+	@Test
 	public void removeElement() {
 		assertEquals(2, service.removeElement(new int[]{3,2,2,3}, 3));
 		assertEquals(5, service.removeElement(new int[]{0,1,2,2,3,0,4,2},2));

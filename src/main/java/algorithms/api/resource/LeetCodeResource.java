@@ -58,4 +58,9 @@ public class LeetCodeResource {
 	public int removeDuplicates(int[] nums) {
 		return service.removeDuplicates(nums);
 	}
+
+	@GetMapping("/maximum-number-of-words-found-in-sentences")
+	public int maximumNumberOfWordsFoundInSentences(String[] sentences) {
+		return service.maximumNumberOfWordsFoundInSentences(sentences);
+	}
 }
