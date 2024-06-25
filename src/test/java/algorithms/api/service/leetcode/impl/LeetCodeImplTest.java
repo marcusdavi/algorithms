@@ -58,7 +58,6 @@ public class LeetCodeImplTest {
 		assertEquals(false, service.isPalindromeNumber(250));
 		assertEquals(true, service.isPalindromeNumber(1213121));
 		assertEquals(false, service.isPalindromeNumber(-123));
-
 	}
 
 	@Test
@@ -144,6 +143,14 @@ public class LeetCodeImplTest {
 
 		result = new int[]{0,0,1,1,2,2};
 		response = service.sortColors(new int[]{2,0,2,1,1,0});
+
+	}
+
+	@Test
+	public void findTheIndexOfTheFirstOccurrenceInAString() {
+
+		assertEquals(0,service.findTheIndexOfTheFirstOccurrenceInAString("sadbutsad", "sad"));
+		assertEquals(-1,service.findTheIndexOfTheFirstOccurrenceInAString("leetcode", "leeto"));
 
 	}
 

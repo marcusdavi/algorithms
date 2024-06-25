@@ -153,6 +153,11 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return maxNumber;
     }
 
+    @Override
+    public int findTheIndexOfTheFirstOccurrenceInAString(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

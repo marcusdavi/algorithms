@@ -107,4 +107,12 @@ public interface LeetCodeService {
      * @return
      */
     int maximumNumberOfWordsFoundInSentences(String[] sentences);
+
+    /**
+     * Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    int findTheIndexOfTheFirstOccurrenceInAString(String haystack, String needle);
 }

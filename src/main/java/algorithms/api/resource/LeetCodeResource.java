@@ -63,4 +63,9 @@ public class LeetCodeResource {
 	public int maximumNumberOfWordsFoundInSentences(String[] sentences) {
 		return service.maximumNumberOfWordsFoundInSentences(sentences);
 	}
+
+	@GetMapping("/find-the-index-of-the-first-occurrence-in-a-string")
+	public int maximumNumberOfWordsFoundInSentences(String haystack, String needle) {
+		return service.findTheIndexOfTheFirstOccurrenceInAString(haystack, needle);
+	}
 }
