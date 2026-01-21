@@ -158,6 +158,27 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return haystack.indexOf(needle);
     }
 
+    @Override
+    public int searchInsertPosition(int[] nums, int target) {
+        int lowerBound = 0;
+        int midPoint = 0;
+        int upperBound = nums.length - 1;
+
+        while (lowerBound <= upperBound) {
+            midPoint = (lowerBound + upperBound) / 2;
+            int valueMid = nums[midPoint];
+
+            if (target == valueMid) {
+                return midPoint;
+            } else if (target < valueMid) {
+                upperBound = midPoint - 1;
+            } else {
+                lowerBound = midPoint + 1;
+            }
+        }
+        return lowerBound;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

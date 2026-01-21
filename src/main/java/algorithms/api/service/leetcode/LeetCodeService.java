@@ -115,4 +115,6 @@ public interface LeetCodeService {
      * @return
      */
     int findTheIndexOfTheFirstOccurrenceInAString(String haystack, String needle);
+
+    int searchInsertPosition(int[] nums, int target);
 }
