@@ -73,4 +73,9 @@ public class LeetCodeResource {
 	public int searchInsert(int[] nums, int target) {
 		return service.searchInsertPosition(nums, target);
 	}
+
+	@GetMapping("/my-sqrt-without-function")
+	public int mySqrtWithoutFunction(int x) {
+		return service.mySqrtWithoutFunction(x);
+	}
 }

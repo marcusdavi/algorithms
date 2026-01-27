@@ -179,6 +179,31 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return lowerBound;
     }
 
+    @Override
+    public int mySqrtWithoutFunction(int x) {
+        if (x < 2) {
+            return x;
+        }
+
+        int left = 1;
+        int right = x / 2;
+        int result = 0;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (mid == x / mid) {
+                return mid;
+            } else if (mid < x / mid) {
+                result = mid;
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return result;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

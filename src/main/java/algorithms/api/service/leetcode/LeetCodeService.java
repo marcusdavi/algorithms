@@ -117,4 +117,6 @@ public interface LeetCodeService {
     int findTheIndexOfTheFirstOccurrenceInAString(String haystack, String needle);
 
     int searchInsertPosition(int[] nums, int target);
+
+    int mySqrtWithoutFunction(int x);
 }

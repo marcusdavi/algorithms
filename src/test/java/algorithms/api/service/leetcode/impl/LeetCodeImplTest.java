@@ -181,4 +181,14 @@ public class LeetCodeImplTest {
 
     }
 
+    @Test
+    public void mySqrtWithoutFunction() {
+        assertEquals(1, service.mySqrtWithoutFunction(1));
+        assertEquals(2, service.mySqrtWithoutFunction(4));
+        assertEquals(2, service.mySqrtWithoutFunction(8));
+        assertEquals(6, service.mySqrtWithoutFunction(40));
+        assertEquals(46340, service.mySqrtWithoutFunction(2147483647));
+
+    }
+
 }
