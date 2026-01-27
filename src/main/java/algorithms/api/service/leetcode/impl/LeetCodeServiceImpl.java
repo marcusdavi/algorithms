@@ -204,6 +204,24 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return result;
     }
 
+    @Override
+    public int[] plusOne(int[] digits) {
+        int maxI = digits.length - 1;
+
+        for (int i = maxI; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+
+        int[] result = new int[digits.length + 1];
+        result[0] = 1; // ex: 999 -> 1000
+
+        return result;
+    }
+
     private BigInteger getNumber(ListNode ln){
         StringBuilder strNumber = new StringBuilder();
 

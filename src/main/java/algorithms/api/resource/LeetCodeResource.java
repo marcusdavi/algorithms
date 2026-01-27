@@ -78,4 +78,9 @@ public class LeetCodeResource {
 	public int mySqrtWithoutFunction(int x) {
 		return service.mySqrtWithoutFunction(x);
 	}
+
+	@GetMapping("/plus-one")
+	public int[] plusOne(int[] digits) {
+		return service.plusOne(digits);
+	}
 }

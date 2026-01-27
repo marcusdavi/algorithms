@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Arrays;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -189,6 +190,13 @@ public class LeetCodeImplTest {
         assertEquals(6, service.mySqrtWithoutFunction(40));
         assertEquals(46340, service.mySqrtWithoutFunction(2147483647));
 
+    }
+
+    @Test
+    public void plusOne() {
+        assertArrayEquals(new int[]{1, 2, 4}, service.plusOne(new int[]{1, 2, 3}));
+        assertArrayEquals(new int[]{1, 3, 0}, service.plusOne(new int[]{1, 2, 9}));
+        assertArrayEquals(new int[]{1, 0, 0, 0}, service.plusOne(new int[]{9, 9, 9}));
     }
 
 }

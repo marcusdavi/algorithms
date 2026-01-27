@@ -119,4 +119,6 @@ public interface LeetCodeService {
     int searchInsertPosition(int[] nums, int target);
 
     int mySqrtWithoutFunction(int x);
+
+    int[] plusOne(int[] ints);
 }
