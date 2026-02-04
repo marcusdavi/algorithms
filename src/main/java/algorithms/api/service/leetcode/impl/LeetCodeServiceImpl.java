@@ -10,14 +10,25 @@ public class LeetCodeServiceImpl implements LeetCodeService {
     @Override
     public ListNode getSum(ListNode l1, ListNode l2) {
 
-        // Convert both linked lists to BigInteger and sum them
-        BigInteger result = getNumber(l1).add(getNumber(l2));
+        ListNode head = new ListNode();
+        ListNode current = head;
+        int carry = 0;
 
-        // Reverse the result because the linked list stores digits in reverse order
-        String strResult = reverseString(String.valueOf(result));
+        while (l1 != null || l2 != null || carry > 0) {
+            int val1 = (l1 != null) ? l1.val : 0;
+            int val2 = (l2 != null) ? l2.val : 0;
 
-        // Create a new linked list from the resulting digits
-        return createListNode(strResult.toCharArray());
+            int sum = val1 + val2 + carry;
+            carry = sum / 10;
+
+            current.next = new ListNode(sum % 10);
+            current = current.next;
+
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+
+        return head.next;
     }
 
     @Override
@@ -256,36 +267,8 @@ public class LeetCodeServiceImpl implements LeetCodeService {
         return result;
     }
 
-    private BigInteger getNumber(ListNode ln){
-        StringBuilder strNumber = new StringBuilder();
-
-        do {
-            strNumber.append(ln.val);
-            ln = ln.next;
-        }
-        while(ln != null);
-
-        return new BigInteger(reverseString(strNumber.toString()));
-    }
-
     private String reverseString(String str) {
         return new StringBuilder(str).reverse().toString();
-    }
-
-    private static ListNode createListNode(char[] values) {
-        if (values.length == 0) {
-            return null;
-        }
-
-        ListNode head = new ListNode(Character.getNumericValue(values[0]));
-        ListNode current = head;
-
-        for (int i = 1; i < values.length; i++) {
-            current.next = new ListNode(Character.getNumericValue(values[i]));
-            current = current.next;
-        }
-
-        return head;
     }
 
 }
