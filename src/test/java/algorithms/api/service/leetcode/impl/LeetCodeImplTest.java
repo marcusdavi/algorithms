@@ -199,4 +199,10 @@ public class LeetCodeImplTest {
         assertArrayEquals(new int[]{1, 0, 0, 0}, service.plusOne(new int[]{9, 9, 9}));
     }
 
+    @Test
+    public void addBinary() {
+        assertEquals("100", service.addBinary("11", "1"));
+        assertEquals("10101", service.addBinary("1010", "1011"));
+    }
+
 }

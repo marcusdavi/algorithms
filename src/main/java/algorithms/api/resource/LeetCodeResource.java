@@ -83,4 +83,9 @@ public class LeetCodeResource {
 	public int[] plusOne(int[] digits) {
 		return service.plusOne(digits);
 	}
+
+	@GetMapping("/add-binary")
+	public String addBinary(String a, String b) {
+		return service.addBinary(a, b);
+	}
 }

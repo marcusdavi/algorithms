@@ -10,16 +10,19 @@ public class LeetCodeServiceImpl implements LeetCodeService {
     @Override
     public ListNode getSum(ListNode l1, ListNode l2) {
 
+        // Convert both linked lists to BigInteger and sum them
         BigInteger result = getNumber(l1).add(getNumber(l2));
 
+        // Reverse the result because the linked list stores digits in reverse order
         String strResult = reverseString(String.valueOf(result));
 
+        // Create a new linked list from the resulting digits
         return createListNode(strResult.toCharArray());
     }
 
     @Override
     public Boolean isPalindromeNumber(int number) {
-        return number>= 0 && String.valueOf(number).equals(new StringBuilder(String.valueOf(number)).reverse().toString());
+        return number>= 0 && String.valueOf(number).contentEquals(new StringBuilder(String.valueOf(number)).reverse());
     }
 
     @Override
@@ -218,6 +221,37 @@ public class LeetCodeServiceImpl implements LeetCodeService {
 
         int[] result = new int[digits.length + 1];
         result[0] = 1; // ex: 999 -> 1000
+
+        return result;
+    }
+
+    @Override
+    public String addBinary(String binaryNumber1, String binaryNumber2) {
+        int a = binaryNumber1.length() - 1;
+        int b = binaryNumber2.length() - 1;
+        String result = "";
+        char carry = '0';
+
+        while (a >= 0 || b >= 0 || carry == '1'){
+            char i = (a >= 0) ? binaryNumber1.charAt(a) : '0';
+            char j = (b >= 0) ? binaryNumber2.charAt(b) : '0';
+            int sum = 0;
+
+            if (i == '1') sum++;
+            if (j == '1') sum++;
+            if (carry == '1') sum++;
+
+            if (sum % 2 == 0) {
+                result = "0" + result;
+            } else {
+                result = "1" + result;
+            }
+
+            carry = (sum >= 2) ? '1' : '0';
+
+            a--;
+            b--;
+        }
 
         return result;
     }
